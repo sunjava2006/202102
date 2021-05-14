@@ -1,0 +1,27 @@
+package com.thzhima.base.work;
+
+public class ExampleWhile {
+
+	public static void main(String[] args) {
+		/*
+		 * ´òÓ¡Êä³ö£º
+		 *    **********
+		 *    **********
+		 *    **********
+		 *    **********
+		 *    **********
+		 */
+		int row = 1;
+		while(row <= 5) {
+			
+			int count = 1;
+			while(count<=10) {
+				System.out.print("*");
+				count++;
+			}
+			System.out.println();
+			row++;
+		}
+		
+	}
+}

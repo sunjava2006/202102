@@ -1,0 +1,55 @@
+package com.thzhima.base.work;
+
+public class ExampleWhile {
+
+	public static void main(String[] args) {
+		/*
+		 * 打印输出：
+		 *    **********
+		 *    **********
+		 *    **********
+		 *    **********
+		 *    **********
+		 */
+		int row = 1;
+		while(row <= 5) {
+			
+			int count = 1;
+			while(count<=10) {
+				System.out.print("*");
+				count++;
+			}
+			System.out.println();
+			row++;
+		}
+		
+		/*
+		 * 打印输出：
+		 *    **********
+		 *     **********
+		 *      **********
+		 *       **********
+		 *        **********
+		 */
+		row = 1;
+		while(row <= 5) {
+			// 输出空格
+			int b= 1;
+			while(b<row) {
+				System.out.print(" ");
+				b++;
+			}
+			
+			// 输出10个*
+			int count = 1;
+			while(count<=10) {
+				System.out.print("*");
+				count++;
+			}
+			System.out.println();
+			row++;
+		}
+		
+		
+	}
+}

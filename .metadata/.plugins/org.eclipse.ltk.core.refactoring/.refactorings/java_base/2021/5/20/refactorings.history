@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;java_base/src/com/thzhima/base/ChoiceI.java&apos; to &apos;ChoiceIf.java&apos;" description="Rename resource &apos;ChoiceI.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/thzhima/base/ChoiceI.java" name="ChoiceIf.java" stamp="1620782564430" updateReferences="true"/>
+</session>

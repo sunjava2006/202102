@@ -1,0 +1,13 @@
+package com.thzhima.base;
+
+public class LogicTest {
+
+	public static void main(String[] args) {
+		
+		int a = 1;
+		
+		boolean agt = a > 10;
+		System.out.println(agt);
+		
+	}
+}

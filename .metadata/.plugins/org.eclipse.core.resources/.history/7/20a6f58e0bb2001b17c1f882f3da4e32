@@ -1,0 +1,14 @@
+package com.thzhima.base;
+
+public class Gave {
+
+	public static void main(String[] args) {
+		int a = 90;
+		
+		a += 90; // a = a + 90;
+		
+		a <<= 1; // a =  a << 1;
+		
+		
+	}
+}

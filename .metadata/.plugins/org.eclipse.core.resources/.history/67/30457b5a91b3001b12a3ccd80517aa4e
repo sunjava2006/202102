@@ -1,0 +1,18 @@
+package com.thzhima.base.work;
+
+public class ½×³Ë {
+
+	public static void main(String[] args) {
+		/*
+		 * Çó20µÄ½×³Ë: 1*2*3*4*...20
+		 */
+		
+		long result = 1;
+		
+		for(int a=2; a<=5; a++) {
+			result *= a;
+		}
+		
+		System.out.println(result);
+	}
+}

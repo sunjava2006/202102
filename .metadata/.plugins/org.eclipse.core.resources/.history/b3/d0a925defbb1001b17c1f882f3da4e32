@@ -1,0 +1,21 @@
+package com.thzhima.base;
+
+public class ArithmaticOp {
+
+	public static void main(String[] args) {
+		//    加号（+）
+		//	     减号（-）
+		//	     乘号（*）
+		//	     除号（/）
+		//	     取模（%）
+		//	    自增运算符（++）
+		//	    自减运算符（--）
+		
+		int a =  1 + 2;
+		
+		System.out.println(a);
+
+		
+		
+	}
+}
