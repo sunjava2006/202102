@@ -1,0 +1,33 @@
+<!--wx Markup Language-->
+<view class="full_screen">
+    <view class="search_bar">
+        <view class="publish_btn">搜索</view>
+        <input type="text" class="search"/>
+        <view class="publish_btn">
+            <image src="/resources/imgs/add.png"></image>
+            <view>发布</view>
+        </view>
+    </view>
+    <!-- =============== end 搜索框 ================= -->
+    <view class="main_select">
+        <view class="items">
+            <view id="0" bindtap="clickItem"  class="{{currID==0?'selected_item':''}}">关注<view></view></view>
+            <view id="1" bindtap="clickItem" class="{{currID==1?'selected_item':''}}">推荐<view></view></view>
+            <view id="2" bindtap="clickItem" class="{{currID==2?'selected_item':''}}">任务<view></view></view>
+        </view>
+        <!--================== end 栏目 ===============-->
+        <swiper class="swiper_items" current="{{currID}}" bindchange="swiperSlide">
+            <swiper-item class="item" >
+                 1
+            </swiper-item>
+            <swiper-item class="item" >2</swiper-item>
+            <swiper-item class="item" >3</swiper-item>
+        </swiper>
+
+
+    </view>
+
+
+    
+
+</view>
