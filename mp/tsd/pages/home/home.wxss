@@ -75,5 +75,30 @@
     
 }
 .item{
-   
+   /* height: 100%; */
+}
+.scroll{
+    background-color: aqua;
+    height: 100%;
+}
+
+.publish_items{
+    display: flex;
+    justify-content: space-evenly;
+    height: 260rpx;
+    align-items: center;
+}
+.publish_items>view{
+    width: 200rpx;
+    height: 200rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.publish_items>view>image{
+    width: 60rpx;
+    height: 60rpx;
 }

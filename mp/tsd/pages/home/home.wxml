@@ -3,7 +3,7 @@
     <view class="search_bar">
         <view class="publish_btn">搜索</view>
         <input type="text" class="search"/>
-        <view class="publish_btn">
+        <view class="publish_btn" bindtap="toPublish">
             <image src="/resources/imgs/add.png"></image>
             <view>发布</view>
         </view>
@@ -20,14 +20,67 @@
             <swiper-item class="item" >
                  1
             </swiper-item>
-            <swiper-item class="item" >2</swiper-item>
+            <swiper-item class="item" >
+                 <scroll-view class="scroll" scroll-y="true">
+                    <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="item" wx:for-item="it"  >
+                        <view style="height:200rpx;border:solid red 1rpx;">{{it}}</view>
+                    </block>
+                       
+                 </scroll-view>
+            
+            </swiper-item>
             <swiper-item class="item" >3</swiper-item>
         </swiper>
 
 
     </view>
-
-
-    
-
 </view>
+
+<!-- =============================================== -->
+
+<page-container  show="{{showPublish}}" >
+<view style="background:#eee">
+    <view style="display:flex; justify-content:space-around; height:100rpx;line-height:100rpx;">
+            <view style="width:600rpx; font-size:1.5em; font-weight:bold">我要发布</view>
+            <icon type="clear" color="gray" size="40" style="top:20rpx;position:relative" bindtap="hidePublish"></icon>
+    </view>
+    <view class="publish_items">
+        <view>
+            <image src="/resources/imgs/dinamic.png"></image>
+            <text>动态</text>
+        </view>
+        <view>
+            <image src="/resources/imgs/star.png"></image>
+            <text>知识点</text>
+        </view>
+        <view>
+            <image src="/resources/imgs/question.png"></image>
+            <text>问答</text>
+        </view>
+    </view>
+    <view>教程投稿</view>
+    <view class="publish_items" style="background:white">
+        
+        <view>
+            <image src="/resources/imgs/question.png"></image>
+            <text>问答</text>
+        </view>
+        <view>
+            <image src="/resources/imgs/question.png"></image>
+            <text>问答</text>
+        </view>
+        <view>
+            <image src="/resources/imgs/question.png"></image>
+            <text>问答</text>
+        </view>
+        <view>
+            <image src="/resources/imgs/question.png"></image>
+            <text>问答</text>
+        </view>
+    </view>
+</view>
+   
+</page-container>
+
+
+

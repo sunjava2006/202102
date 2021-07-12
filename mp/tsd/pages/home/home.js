@@ -5,7 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        "currID":2
+        "currID":2,
+        "showPublish":false
+    },
+    hidePublish:function(){
+        this.setData({"showPublish":false});
+    },
+    toPublish:function(evt){
+        this.setData({"showPublish":true});
     },
     clickItem:function(evt){
         console.log(evt.target.id);
