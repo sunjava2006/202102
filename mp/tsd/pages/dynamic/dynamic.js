@@ -1,45 +1,28 @@
-// pages/home/home.js
+// pages/dynamic/dynamic.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        "currID":1,
-        "showPublish":false
+        imgPath:'/resources/imgs/add_img.png'
     },
-    openKnowledge(){
-        this.setData({"showPublish":false})
-        wx.navigateTo({
-          url: '/pages/knowledge/knowledge'
+    selectImg(){
+        var that = this;
+        wx.chooseImage({
+          count: 1,
+          success:function(res){
+            var img = res.tempFiles[0];
+            console.log(img);
+                that.setData({ imgPath:img.path});
+          }
         })
-    },
-    openDynamic(){
-        this.setData({"showPublish":false})
-        wx.navigateTo({
-          url: '/pages/dynamic/dynamic'
-        })
-    },
-    hidePublish:function(){
-        this.setData({"showPublish":false});
-    },
-    toPublish:function(evt){
-        this.setData({"showPublish":true});
-    },
-    clickItem:function(evt){
-        console.log(evt.target.id);
-        var currID = evt.target.id;
-        this.setData({"currID":currID});
-    },
-    swiperSlide:function(evt){
-        var currID = evt.detail.current;
-        this.setData({"currID":currID});
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+       
     },
 
     /**

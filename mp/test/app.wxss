@@ -8,12 +8,3 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
-.full_screen{
-  height: 100vh;
-  width: 100vw;
-  background-color: #658771;
-  display: flex;
-  flex-direction: column;
-  font-size: 24rpx;
-
-}

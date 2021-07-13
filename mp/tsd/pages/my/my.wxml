@@ -1,2 +1,21 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<block wx:if="{{!useUserInfo }}">
+    <button bindtap="getUserProfile"> 获取头像昵称 </button>
+</block>
+<block wx:if="{{useUserInfo}}">
+    <view class="userInfo">
+        <view class="photo">
+            <open-data type="userAvatarUrl" ></open-data>
+        </view>
+        <view class="nickName">
+            <open-data type="userNickName"></open-data>
+        </view>
+        <view class="exit">
+            exit
+        </view>
+
+    </view>
+   
+</block>
+
+
+

@@ -1,0 +1,12 @@
+<view id="page">
+    <view id="inputSet">
+         <input type="text" id="title" name="title" 
+         placeholder="写个标题更吸引人哦~"/>
+         <textarea name="content" id="content" cols="30" rows="10"
+         placeholder="记录此刻的想法..."></textarea>
+         
+         <image src="{{imgPath}}" class="uploadImg" bindtap="selectImg"></image>
+
+         <button type="primary">发布知识点</button> 
+    </view>
+</view>

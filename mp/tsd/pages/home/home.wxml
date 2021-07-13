@@ -45,11 +45,11 @@
             <icon type="clear" color="gray" size="40" style="top:20rpx;position:relative" bindtap="hidePublish"></icon>
     </view>
     <view class="publish_items">
-        <view>
+        <view bindtap="openDynamic">
             <image src="/resources/imgs/dinamic.png"></image>
             <text>动态</text>
         </view>
-        <view>
+        <view bindtap="openKnowledge">
             <image src="/resources/imgs/star.png"></image>
             <text>知识点</text>
         </view>

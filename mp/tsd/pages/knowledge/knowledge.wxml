@@ -1,0 +1,15 @@
+<view id="page">
+    <view id="inputSet">
+       
+         <textarea name="content" id="content" cols="30" rows="10"
+         placeholder="敲黑板，划重点，分享一下知识点...（56字以内）"></textarea>
+         
+         <image src="{{imgPath}}" class="uploadImg" bindtap="selectImg"></image>
+
+         <textarea name="append" id="append" cols="30" rows="10"
+         placeholder="补充说明...（800字以内）"></textarea>
+
+
+         <button type="primary">发布动态</button> 
+    </view>
+</view>

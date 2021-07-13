@@ -1,1 +1,24 @@
-/* pages/my/my.wxss */
+.photo{
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+.userInfo{
+    display: flex;
+    justify-content: space-evenly;
+    color: gray;
+}
+.nickName, .exit{
+    /* border: solid seagreen 1px; */
+    width:120rpx;
+    height: 128rpx;
+    text-align: center;
+    line-height: 128rpx;
+    font-weight: bold;
+    font-size: 50rpx;
+}
+.exit{
+    flex-grow: 1;
+}
