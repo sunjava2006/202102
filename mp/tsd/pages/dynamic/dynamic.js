@@ -1,11 +1,53 @@
 // pages/dynamic/dynamic.js
+const app = getApp();
+import {userInfo} from '../../utils/userInfo'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        imgPath:'/resources/imgs/add_img.png'
+        imgPath:'/resources/imgs/add_img.png',
+        title:'aa',
+        content:'bb'
+    },
+    publishDynamic(){
+        var userID = userInfo.getUserInfo().userID;
+        var data = {title: this.data.title, content:this.data.content,"user.userID":userID}
+        console.log(data);
+
+        wx.uploadFile({
+          filePath: this.data.imgPath,
+          name: 'pic',
+          url: app.globalData.serverURL+'/publishDynamic',
+          formData: data,
+          success:function (src) {
+              console.log(src)
+           
+              if(src.data=='{"msg":"ok"}'){
+                    wx.showToast({
+                        "title":"发布成功",
+                        "icon" : "success",
+                        "duration":3000,
+                        success:function () {
+                            setTimeout(function (params) {
+                                wx.navigateBack({
+                                    delta: 1
+                                  })
+                            }, 3000);
+                           
+                        }
+                    });
+                   
+              }else{
+                  wx.showToast({
+                      "title":"发布失败",
+                      "icon" : "error"
+                  });
+              }
+          }
+        })
+
     },
     selectImg(){
         var that = this;

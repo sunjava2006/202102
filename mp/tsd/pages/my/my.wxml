@@ -1,5 +1,6 @@
 <block wx:if="{{!useUserInfo }}">
     <button bindtap="getUserProfile"> 获取头像昵称 </button>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">phone</button>
 </block>
 <block wx:if="{{useUserInfo}}">
     <view class="userInfo">

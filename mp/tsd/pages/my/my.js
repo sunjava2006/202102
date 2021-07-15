@@ -1,13 +1,19 @@
 // pages/my/my.js
 const app = getApp();
+import {userInfo} from '../../utils/userInfo';
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {
         useUserInfo:false,
         userInfo: app.globalData.useUserInfo
+    },
+    getPhoneNumber (e) {
+      // console.log(e.detail.errMsg)
+      // console.log(e.detail.iv)
+      // console.log(e.detail.encryptedData)
+      console.log(app.globalData.phoneNumber)
     },
     getUserProfile(e) {
       console.log("%%%%%%%%%%%%%%%%%%%%%%%%%")
@@ -19,13 +25,31 @@ Page({
             console.log(res)
             // console.log(app.globalData)
             app.globalData.userInfo = res.userInfo;
-            // console.log(app.globalData)
+            console.log(app.globalData)
             this.setData({
               userInfo: res.userInfo,
               useUserInfo: true
             })
+
+            // 向服务器发送用户的信息
+            wx.request({
+              url: app.globalData.serverURL+'/login',
+              data:{"phoneNumber":app.globalData.phoneNumber, "userName": this.data.userInfo.nickName},
+              method:"POST",
+              success:function(res){
+                console.log(res);
+                // 将用户信息存储到小程序内部。以供以后向服务端发送数据时，带上用户ID.
+                userInfo.saveUserInfo(res.data.user);
+              }
+
+            })
+
+
+
           }
         })
+
+    
       },
     /**
      * 生命周期函数--监听页面加载
@@ -46,10 +70,10 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      if(!this.data.useUserInfo){
-        console.log("onShow----------------")
-            this.getUserProfile();
-       }
+      // if(!this.data.useUserInfo){
+      //   console.log("onShow----------------")
+      //       this.getUserProfile();
+      //  }
     },
 
     /**

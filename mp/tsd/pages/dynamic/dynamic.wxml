@@ -1,12 +1,12 @@
 <view id="page">
     <view id="inputSet">
-         <input type="text" id="title" name="title" 
+         <input type="text" id="title" name="title" model:value="{{title}}"
          placeholder="写个标题更吸引人哦~"/>
-         <textarea name="content" id="content" cols="30" rows="10"
+         <textarea name="content" id="content" cols="30" rows="10" model:value="{{content}}"
          placeholder="记录此刻的想法..."></textarea>
          
          <image src="{{imgPath}}" class="uploadImg" bindtap="selectImg"></image>
 
-         <button type="primary">发布知识点</button> 
+         <button type="primary" bindtap="publishDynamic">发布动态</button> 
     </view>
 </view>

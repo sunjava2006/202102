@@ -10,6 +10,6 @@
          placeholder="补充说明...（800字以内）"></textarea>
 
 
-         <button type="primary">发布动态</button> 
+         <button type="primary">发布知识点</button> 
     </view>
 </view>

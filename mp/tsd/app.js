@@ -16,6 +16,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    phoneNumber:18013007327,
+    serverURL:'http://wr.free.idcfengye.com'
   }
 })
