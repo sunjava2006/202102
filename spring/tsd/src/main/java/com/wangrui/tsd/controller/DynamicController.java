@@ -24,10 +24,10 @@ public class DynamicController {
 	private DynamicService dynamicService;
 	
 	@RequestMapping("/publishDynamic")
-	@ResponseBody
+	@ResponseBody()
 	public Map publish(MultipartFile pic, Dynamic dynamic) {
 		System.out.println(dynamic);
-		String uploadPath = Thread.currentThread().getContextClassLoader().getResource("static").getPath()+"/pictures";
+		String uploadPath = Thread.currentThread().getContextClassLoader().getResource("").getPath()+"static/pictures";
 		File dir = new File(uploadPath);
 		if(!dir.exists()) {
 			dir.mkdirs();
@@ -43,7 +43,7 @@ public class DynamicController {
 			map.put("msg", "ok");
 		} catch (IllegalStateException | IOException e) {
 			e.printStackTrace();
-			map.put("msg", "nook");
+			map.put("msg", "fail");
 		}
 		return map;
 	}

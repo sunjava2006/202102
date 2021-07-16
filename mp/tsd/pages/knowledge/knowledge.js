@@ -1,11 +1,60 @@
 // pages/dynamic/dynamic.js
+import {userInfo} from '../../utils/userInfo'
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        imgPath:'/resources/imgs/add_img.png'
+        imgPath:'/resources/imgs/add_img.png',
+        abs:'a',
+        content:'b'
+    },
+    publishKnowledge(){
+        var userID = userInfo.getUserInfo().userID;
+        if(! userID){
+            wx.showToast({
+              title: '至“我的”登录',
+              "icon": "error"
+            })
+           
+        }else{
+            var data = {"user.userID": userID, "abs":this.data.abs, "content":this.data.content}
+            console.log(data);
+
+            // 向服务器发送数据
+            wx.uploadFile({
+              filePath: this.data.imgPath,
+              name: 'pic',
+              url: app.globalData.serverURL+'/publishKnowledge',
+              header:{"contentType": "application/json;charset=utf-8"},
+              formData: data,
+              success: (res)=>{
+                  console.log(res)
+                  if(res.data='{"success":true}'){
+                    wx.showToast({
+                        title: '发布成功',
+                        success:()=>{
+                            setTimeout(() => {
+                                wx.navigateBack({
+                                    delta:1
+                                })
+                            }, 2000);
+                        }
+                      })
+                  }else{
+                      wx.showToast({
+                        title: '发布失败',
+                        icon:"error"
+                      })
+                  }
+              }
+            })
+
+
+        }
+       
     },
     selectImg(){
         var that = this;

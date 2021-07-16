@@ -21,9 +21,25 @@
                  1
             </swiper-item>
             <swiper-item class="item" >
-                 <scroll-view class="scroll" scroll-y="true">
-                    <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:key="item" wx:for-item="it"  >
-                        <view style="height:200rpx;border:solid red 1rpx;">{{it}}</view>
+                 <scroll-view class="scroll" scroll-y="true" bindscrolltolower="nextPage">
+                    <block wx:for="{{list}}" wx:key="item" wx:for-item="item"  >
+                      <view  class="listItem">
+                       <view class="item_title">
+                            <view>
+                                <image class="item_title_photo" src="/resources/imgs/home_g.png"></image>
+                                <view class="item_title_name">名字</view>
+                            </view>
+                            <view class="focus"> <text>+关注</text> </view>
+                       </view>
+                       <view class="comment">评论</view>
+                       <view class="abs">
+                           <view class="abs_content">{{item.abs}}</view>
+                           <view class="knp"> <text>知识点</text> </view>
+                       </view>
+                        
+                        
+                        
+                        </view>
                     </block>
                        
                  </scroll-view>
