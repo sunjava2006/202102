@@ -30,4 +30,8 @@ public class KnowledgeService {
 		int count = this.knowledgeDao.totalCount();
 		return (int) Math.ceil(count/size);
 	}
+	
+	public Knowledge findById(int id) {
+		return this.knowledgeDao.findByID(id);
+	}
 }

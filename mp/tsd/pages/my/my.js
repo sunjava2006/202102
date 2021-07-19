@@ -34,7 +34,7 @@ Page({
             // 向服务器发送用户的信息
             wx.request({
               url: app.globalData.serverURL+'/login',
-              data:{"phoneNumber":app.globalData.phoneNumber, "userName": this.data.userInfo.nickName},
+              data:{"phoneNumber":app.globalData.phoneNumber, "userName": this.data.userInfo.nickName, "avatarUrl": this.data.userInfo.avatarUrl},
               method:"POST",
               success:function(res){
                 console.log(res);

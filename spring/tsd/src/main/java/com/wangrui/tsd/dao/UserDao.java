@@ -20,7 +20,8 @@ public interface UserDao {
 	@Select("select * from t_user where phone_number=#{phoneNumber}")
 	@Results(id = "UserMapper", value = {@Result(column = "user_id", property = "userID", id = true),
 			                          @Result(column = "phone_number", property = "phoneNumber"),
-			                          @Result(column = "user_name", property = "userName")})
+			                          @Result(column = "user_name", property = "userName"),
+			                          @Result(column = "avatarUrl", property = "avatarUrl")})
 	public User findByPhoneNumber(String phoneNumber);
 	
 	
@@ -29,7 +30,7 @@ public interface UserDao {
 	           statement = { "select seq_user.nextval from dual" })
 	public void add(User user);
 	
-	@Update("update t_user set user_name=#{userName} where user_id=#{userID}")
+	@Update("update t_user set user_name=#{userName}, avatarUrl=#{avatarUrl} where user_id=#{userID}")
 	public void update(User user);
 	
 	@Select("select * from t_user where user_id=#{userID}")

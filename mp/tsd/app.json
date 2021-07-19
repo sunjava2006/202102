@@ -1,13 +1,13 @@
 {
   "pages": [
-  
+    
     "pages/home/home",
     "pages/knowledge/knowledge",
     "pages/index/index",
     "pages/my/my",
    
     "pages/dynamic/dynamic",
-
+    "pages/knowledgeDetail/knowledgeDetail",
     "pages/logs/logs"
     
 

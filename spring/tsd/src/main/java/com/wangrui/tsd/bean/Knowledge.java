@@ -7,6 +7,15 @@ public class Knowledge {
 	private String content;
 	private String picture;
 	private User user;
+	private Recomment lastRecomment;
+
+	public Recomment getLastRecomment() {
+		return lastRecomment;
+	}
+
+	public void setLastRecomment(Recomment lastRecomment) {
+		this.lastRecomment = lastRecomment;
+	}
 
 	public Integer getKnowledgeID() {
 		return knowledgeID;
@@ -64,8 +73,10 @@ public class Knowledge {
 	@Override
 	public String toString() {
 		return "Knowledge [knowledgeID=" + knowledgeID + ", abs=" + abs + ", content=" + content + ", picture="
-				+ picture + ", user=" + user + "]";
+				+ picture + ", user=" + user + ", lastRecomment=" + lastRecomment + "]";
 	}
+
+	
 	
 	
 

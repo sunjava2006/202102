@@ -1,0 +1,56 @@
+<view class="page">
+    <scroll-view scroll-y="true"  id="main" bindscrolltolower="nextPage">
+       
+        <view id="knowledgeDetail" >
+            <view class="abs">{{knowledge.abs}}</view>
+            <view class="content">{{knowledge.content}}</view>
+            <!-- <image src="{{serverURL+'/pictures/'+knowledge.picture}}"></image> -->
+        </view>
+        <view id="recommentList">
+            <view class="subtitle">评论4</view>
+            <view>
+                好评 中评 差评
+            </view>
+            <block wx:for="{{recommentList}}">
+                 <view class="recomment_item">
+                     <view class="recomment_user">
+                         <image src="{{item.user.avatarUrl}}"></image>
+                         <view>
+                            <view class="nickname">{{item.user.userName}}</view>
+                            <view class="date">{{item.publishDate}}</view>
+                         </view>
+                     </view>
+                     <view class="recomment_content">
+                        {{item.content}}
+                     </view>
+                 </view>
+            </block>
+        </view>
+       
+       
+    </scroll-view>
+    <view id="toolbar">
+        <view bindtap="editRecomment">
+            <image src="/resources/imgs/edit.png"></image>
+            评论或建议... 
+        </view>
+    </view>
+</view>
+
+<page-container show="{{show}}">
+  <view id="editcontainer">
+        <textarea name="" id="recomment" cols="30" rows="4" model:value="{{recomment}}"></textarea>
+        <view  class="op">
+            <radio-group  bindchange="choseGrad" >
+               <block wx:for="{{gradList}}">
+                  <radio name="grad" value="{{item}}"  >{{item}}</radio>
+               </block>
+               
+            
+            </radio-group>
+            <view class="btn" bindtap="publishRecomment">提交</view>
+        </view>
+  </view>
+  
+</page-container>
+

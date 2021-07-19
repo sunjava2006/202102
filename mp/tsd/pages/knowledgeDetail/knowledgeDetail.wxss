@@ -1,0 +1,120 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+#main{
+    /* background-color: rgb(240, 189, 189); */
+
+    overflow: scroll;
+    
+
+}
+#main>view{
+    
+}
+#toolbar{
+    height: 100rpx;
+    width: 100vw;
+
+    position: fixed;
+    bottom: 0;
+    padding: 20rpx;
+}
+#knowledgeDetail{
+    padding: 20rpx;
+    background: #eee;
+    border-radius: 50rpx;
+    margin: 20rpx;
+}
+.abs{
+    margin: 20rpx 0 20rpx 0;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+.content{
+   line-height: 1.5em;
+   text-indent: 2em;
+}
+#recommentList{
+   margin-top: 50rpx;
+   padding: 20rpx;
+   margin: 20rpx;
+}
+.subtitle{
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 3em;
+}
+.recomment_item{
+    /* border: black solid 1px; */
+    margin: 50rpx 0 ;
+}
+.recomment_user{
+    height: 60rpx;
+    /* background-color: blanchedalmond; */
+    margin: 20rpx 0 ;
+    display: flex;
+}
+.recomment_user>image{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+.nickname{
+    font-weight: bold;
+}
+.date{
+    font-size: 0.7em;
+    color: gray;
+}
+.recomment_content{
+    margin-left: 80rpx;
+    color: #444;
+}
+#toolbar>view{
+    background-color: #eee;
+    height: 80rpx;
+    width: 10em;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 50rpx;
+    
+}
+#toolbar image{
+    width: 20rpx;
+    height: 20rpx;
+}
+#editcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500rpx;
+}
+#recomment{
+    margin-top: 50rpx;
+    margin-bottom: 50rpx;
+    background-color: #eee;
+    width: 700rpx;
+    height: 300rpx;
+    border-radius: 50rpx;
+    padding: 20rpx;
+}
+.op{
+    display: flex;
+    justify-content: space-evenly;
+}
+radio{
+    width: 150rpx;
+}
+.btn{
+    width: 150rpx;
+    height: 50rpx;
+    background-color: gray;
+    text-align: center;
+    color: white;
+    border-radius: 25rpx;
+}

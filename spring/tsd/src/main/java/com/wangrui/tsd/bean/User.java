@@ -5,7 +5,16 @@ public class User {
 	private Integer userID;
 	private String phoneNumber;
 	private String userName;
+	private String avatarUrl;
 	
+	public String getAvatarUrl() {
+		return avatarUrl;
+	}
+
+	public void setAvatarUrl(String avatarUrl) {
+		this.avatarUrl = avatarUrl;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
@@ -48,8 +57,11 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", phoneNumber=" + phoneNumber + ", userName=" + userName + "]";
+		return "User [userID=" + userID + ", phoneNumber=" + phoneNumber + ", userName=" + userName + ", avatarUrl="
+				+ avatarUrl + "]";
 	}
+
+	
 
 	
 	

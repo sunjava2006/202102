@@ -24,18 +24,22 @@
                  <scroll-view class="scroll" scroll-y="true" bindscrolltolower="nextPage">
                     <block wx:for="{{list}}" wx:key="item" wx:for-item="item"  >
                       <view  class="listItem">
-                       <view class="item_title">
+                       <view class="item_title" wx:if="{{item.lastRecomment}}">
                             <view>
-                                <image class="item_title_photo" src="/resources/imgs/home_g.png"></image>
-                                <view class="item_title_name">名字</view>
+                                <image class="item_title_photo" src="{{item.lastRecomment.user.avatarUrl}}"></image>
+                                <view class="item_title_name">{{item.lastRecomment.user.userName}}</view>
                             </view>
                             <view class="focus"> <text>+关注</text> </view>
                        </view>
-                       <view class="comment">评论</view>
-                       <view class="abs">
-                           <view class="abs_content">{{item.abs}}</view>
-                           <view class="knp"> <text>知识点</text> </view>
+                       <view bindtap="showKnowledgeDetail" id="{{item.knowledgeID}}">
+                            <view class="comment">{{item.lastRecomment.content}}</view>
+                            <view class="abs">
+                                <view class="abs_content">{{item.abs}}</view>
+                                <view class="knp"> <text>知识点</text> </view>
+                            </view>
+
                        </view>
+                       
                         
                         
                         

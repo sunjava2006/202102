@@ -59,7 +59,8 @@ Page({
      */
     onShow: function () {
         console.log('onShow')
-        this.listKnowledge(this.data.currpage, this.data.size);
+        this.data.list=[];
+        this.listKnowledge(1, this.data.size);
     },
 
     /**
@@ -123,5 +124,11 @@ Page({
         if(this.data.currpage<this.data.totalPage){
             this.listKnowledge(this.data.currpage+1, this.data.size);
         }
+    },
+    showKnowledgeDetail(evt){
+       var knowledgeID = evt.currentTarget.id;
+       wx.navigateTo({
+         url: '/pages/knowledgeDetail/knowledgeDetail?knowledgeID='+knowledgeID
+       })
     }
 })

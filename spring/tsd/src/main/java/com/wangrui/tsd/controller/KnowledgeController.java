@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -58,13 +59,19 @@ public class KnowledgeController {
 		
 		List<Knowledge> list = this.ks.listByPage((Integer)m.get("page"), (Integer)m.get("size"));
 		int totalPage  = this.ks.totalPage((Integer)m.get("size"));
-		
+		System.out.println(list);
 		map.put("totalPage", totalPage);
 		map.put("currPage", (Integer)m.get("page"));
 		map.put("list", list);
 		
 	
 		return map;
+	}
+	
+	@RequestMapping("/getKnowledge/{knid}")
+	@ResponseBody
+	public Knowledge get(@PathVariable("knid") int id) {
+		return this.ks.findById(id);
 	}
 	
 }
