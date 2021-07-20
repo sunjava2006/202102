@@ -130,5 +130,9 @@ Page({
        wx.navigateTo({
          url: '/pages/knowledgeDetail/knowledgeDetail?knowledgeID='+knowledgeID
        })
+    },
+    addFocus(evt){
+        console.log(evt)
+        var userID = evt.currentTarget.id;
     }
 })

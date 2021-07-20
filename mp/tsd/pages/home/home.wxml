@@ -29,7 +29,7 @@
                                 <image class="item_title_photo" src="{{item.lastRecomment.user.avatarUrl}}"></image>
                                 <view class="item_title_name">{{item.lastRecomment.user.userName}}</view>
                             </view>
-                            <view class="focus"> <text>+关注</text> </view>
+                            <view class="focus" bindtap="addFocus" id="{{item.lastRecomment.user.userID}}"> <text>+关注</text> </view>
                        </view>
                        <view bindtap="showKnowledgeDetail" id="{{item.knowledgeID}}">
                             <view class="comment">{{item.lastRecomment.content}}</view>
