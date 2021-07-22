@@ -2,6 +2,7 @@ package com.wangrui.tsd.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.One;
@@ -48,4 +49,8 @@ public interface RecommentDao {
 			"select * from t_recomment where knowledge_id=#{konwledgeID} order by recomment_id desc)a where rownum =1")
 	@ResultMap("RecommentMapper")
 	public Recomment lastRecomment(int konwledgeID);
+	
+	@Delete("delete from t_recomment where knowledge_id=#{knowledgeID}")
+	public void deleteByKnowledgeID(int knowledgeID);
+	
 }

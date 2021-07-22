@@ -39,18 +39,21 @@ public class App {
 //					countHead++;
 //				}
 //			}while(true);
-			System.out.println(in.available());
+			System.out.println("----------------------------------------------");
 			byte[] data = new byte[1024*1024];
-			int count = in.read(data);
-			String str = new String(data, 0, count);
-			System.out.println(str);
+			while(true) {
+				int count = in.read(data);
+				String str = new String(data, 0, count);
+				System.out.println(str);
+			}
+			
 			
 			//==============================================
-			out = s.getOutputStream();
-			out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes("utf-8"));
-			out.write("Content-Type: application/json;charset=utf-8\r\n\r\n".getBytes("utf-8"));
-			out.write("{\"name\":\"wang\"}\r\n\r\n".getBytes("utf-8"));
-			out.flush();
+//			out = s.getOutputStream();
+//			out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes("utf-8"));
+//			out.write("Content-Type: application/json;charset=utf-8\r\n\r\n".getBytes("utf-8"));
+//			out.write("{\"name\":\"wang\"}\r\n\r\n".getBytes("utf-8"));
+//			out.flush();
 			
 			
 		} catch (IOException e) {

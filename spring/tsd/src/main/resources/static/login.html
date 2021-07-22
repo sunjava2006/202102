@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    <input type="text" name="loginName" id="loginName" value="wang">
+    <input type="text" name="pwd" id="pwd" value="123">
+    <button id="btnLogin">登录</button>
+
+    <script>
+        $(function(){
+            $('#btnLogin').click(function(){
+                var loginName = $('#loginName').val();
+                var pwd = $('#pwd').val();
+                console.log(loginName + pwd);
+                $.get("http://localhost:8888/testlogin?loginName="+loginName+"&pwd="+pwd, function(res){
+                    console.log(res);
+                })
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>

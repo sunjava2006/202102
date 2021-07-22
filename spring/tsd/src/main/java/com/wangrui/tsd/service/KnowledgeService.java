@@ -4,15 +4,20 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.wangrui.tsd.bean.Knowledge;
 import com.wangrui.tsd.dao.KnowledgeDao;
+import com.wangrui.tsd.dao.RecommentDao;
 
 @Service
 public class KnowledgeService {
 
 	@Autowired
 	private KnowledgeDao knowledgeDao;
+	
+	@Autowired
+	private RecommentDao recommentDao;
 	
 	public void publish(Knowledge k) {
 		this.knowledgeDao.add(k);
@@ -33,5 +38,11 @@ public class KnowledgeService {
 	
 	public Knowledge findById(int id) {
 		return this.knowledgeDao.findByID(id);
+	}
+	
+	@Transactional // 启动事务
+	public void deleteByID(int id) {
+		this.recommentDao.deleteByKnowledgeID(id);
+		this.knowledgeDao.deleteByID(id);
 	}
 }

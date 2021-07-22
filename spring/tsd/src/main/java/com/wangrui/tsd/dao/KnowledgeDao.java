@@ -2,6 +2,7 @@ package com.wangrui.tsd.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.One;
@@ -49,5 +50,8 @@ public interface KnowledgeDao {
 	@Select("select * from t_knowledge where knowledge_id=#{id}")
 	@ResultMap("KnowledgeMpper")
 	public Knowledge findByID(int id);
+	
+	@Delete("delete from t_knowledge where knowledge_id=#{id}")
+	public void deleteByID(int id);
 	
 }
