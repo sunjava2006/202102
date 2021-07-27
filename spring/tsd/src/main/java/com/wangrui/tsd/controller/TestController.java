@@ -1,9 +1,11 @@
 package com.wangrui.tsd.controller;
 
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -33,5 +35,13 @@ public class TestController {
 //		res.setHeader("Access-Control-Allow-Origin", "*");
 		
 		return "OK";
+	}
+	
+	@Value("${server.port}")
+	int port;
+	
+	@RequestMapping("/xxx")
+	public void test(PrintWriter p) {
+		p.print(port);
 	}
 }

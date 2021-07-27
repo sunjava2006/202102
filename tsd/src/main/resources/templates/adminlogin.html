@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员登录</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(158, 204, 241);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .page{
+            width: 600px;
+            height: 500px;
+            background-color: white;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }   
+        table{
+            width: 80%;
+            border-collapse: collapse;
+        }
+        td{
+            border-bottom: gainsboro solid 1px;
+            height: 80px;
+        }
+
+        .pull-right{
+            float: right;
+        }
+        .txt-input{
+            height: 40px;
+            width: 180px;
+            line-height: 40px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            border:lightblue solid 2px;
+
+        }
+        .btn{
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        .title{
+            font-size: 2em;
+            font-weight: bold;
+            color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+       
+        <table>
+           <caption class="title">登录</caption>
+           <form action="/adminLogin" method="POST">
+           <tr>
+               <td>登录名</td>
+               <td><input type="text" name="loginName" id="" class="txt-input"></td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>密码</td>
+               <td><input type="password" name="pwd" id="" class="txt-input"></td>
+               <td></td>
+           </tr>
+           <tr>
+               <td>验证码</td>
+               <td><input type="text" name="code" id="" class="txt-input"></td>
+               <td th:text="${code}"></td>
+           </tr>
+           <tr>
+               <td colspan="3" >
+                  <label th:text="${msg}"></label>
+                   <input type="submit" value="登录" class="pull-right btn">
+               </td>
+              
+           </tr>
+</form>
+        </table>
+        
+    </div>
+</body>
+</html>

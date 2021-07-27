@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.thzhima.advance.util.MyArrayList"/>
-<fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
-<fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
-<fullyQualifiedTypeName name="java.lang.ClassCastException"/>
-<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
-<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
-<fullyQualifiedTypeName name="com.thzhima.advance.util.MyLinkedList.MyListIterator"/>
-<fullyQualifiedTypeName name="com.thzhima.advance.util.MyLinkedList"/>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="com.thzhima.advance.util.MyHashMap.MyEntry"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.thzhima.advance.util.MyHashMap.Node"/>
@@ -60,4 +49,15 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="oracle.jdbc.OracleCallableStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
+<fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+<fullyQualifiedTypeName name="org.springframework.data.annotation.QueryAnnotation"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration"/>
+<fullyQualifiedTypeName name="com.wangrui.tsd.service.RedisService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.wangrui.tsd.bean.Book"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 </qualifiedTypeNameHistroy>

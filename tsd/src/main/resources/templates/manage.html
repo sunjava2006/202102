@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>同事答管理平台</title>
+    <style>
+        html, body{
+            height: 100%;
+            
+        }
+        .nav-bar{
+            display: flex;
+            padding-inline-start: 0;
+            background-color: gainsboro;
+            height: 50px;
+        }
+        .nav-bar>li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-indent: 0;
+            width: 100px;
+            /* border: red solid 1px; */
+        }
+        .nav-bar>li>a{
+            width: 100px;
+            height: 50px;
+            /* background-color: gold; */
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            color: #222;
+        }
+        .nav-bar>li>a:hover{
+            background-color: #222;
+            color: white;
+            transition: ALL 1s;
+            font-weight: bold;
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav-bar">
+        <li>你好： <label th:text="${session.userInfo.loginName}"></label> </li>
+        <li> <a href="http://www.qq.com" target="mainframe">动态管理</a></li>
+        <li> <a href="/Knowledge/1/3" target="mainframe">知识点管理</a> </li>
+        <li> <a href="">退出</a> </li>
+    </ul>
+
+    <iframe src="/Knowledge/1/3" name="mainframe" frameborder="1"></iframe>
+</body>
+</html>
