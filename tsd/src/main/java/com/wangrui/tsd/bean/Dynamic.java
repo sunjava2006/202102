@@ -1,6 +1,8 @@
 package com.wangrui.tsd.bean;
 
-public class Dynamic {
+import java.io.Serializable;
+
+public class Dynamic implements Serializable{
 
 	private Integer dynamicID;
 	private String title;

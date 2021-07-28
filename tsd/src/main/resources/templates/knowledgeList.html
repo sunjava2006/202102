@@ -44,8 +44,8 @@
         </tr>
         <tr>
         	<td colspan="5">
-        	    <a th:if="${currPage>1}" th:href="'/Knowledge/'+${currPage-1}+'/'+${size}">上一页</a>
-        	    <a th:if="${currPage<totalPage}" th:href="'/Knowledge/'+${currPage+1}+'/'+${size}">下一页</a>
+        	    <a th:if="${currPage>1}" th:href="'/manage/Knowledge/'+${currPage-1}+'/'+${size}">上一页</a>
+        	    <a th:if="${currPage<totalPage}" th:href="'/manage/Knowledge/'+${currPage+1}+'/'+${size}">下一页</a>
         	
         	</td>
         </tr>
@@ -54,7 +54,7 @@
     <script>
         function deleteKnowledge(btn){
         	var knowledgeID = btn.id;
-        	window.location="/deleteKnowledge/"+knowledgeID;
+        	window.location="/manage/deleteKnowledge/"+knowledgeID;
         }
         
     </script>

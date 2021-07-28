@@ -20,39 +20,9 @@ import com.wangrui.tsd.service.KnowledgeService;
 
 @Controller
 public class AdminController {
-	@Value("${pageSize}")
-	int pageSize;
 	
 	@Autowired
 	private AdminService adminService;
-	
-	@Autowired
-	private KnowledgeService knowledgeService;
-	
-	@GetMapping("/Knowledge/{page}/{size}")
-	public ModelAndView listKnowledge(@PathVariable("page")int page, 
-			                          @PathVariable("size")int size, 
-			                          ModelAndView mv) {
-		
-		List<Knowledge> list = this.knowledgeService.listByPage(page, size);
-		
-		mv.addObject("list", list);
-		mv.addObject("totalPage", this.knowledgeService.totalPage(size));
-		mv.addObject("currPage", page);
-		mv.addObject("size", size);
-		
-		mv.setViewName("/knowledgeList");
-		
-		return mv;
-	}
-	
-	@RequestMapping("/deleteKnowledge/{id}")
-	public String deleteKnowledge(@PathVariable("id")int id) {
-		
-		this.knowledgeService.deleteByID(id);
-		
-		return "redirect:/Knowledge/1/"+this.pageSize;
-	}
 	
 	
 	

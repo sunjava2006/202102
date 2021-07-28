@@ -1,8 +1,9 @@
 package com.wangrui.tsd.bean;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Recomment {
+public class Recomment implements Serializable{
 
 	private Integer recommentID;
 	private Integer knowledgeID;

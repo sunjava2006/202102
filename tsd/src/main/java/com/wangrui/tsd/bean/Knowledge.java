@@ -1,6 +1,9 @@
 package com.wangrui.tsd.bean;
 
-public class Knowledge {
+import java.io.Serializable;
+
+// 要缓存的对象必须实现序列化接口
+public class Knowledge implements Serializable{
 
 	private Integer knowledgeID;
 	private String abs;
