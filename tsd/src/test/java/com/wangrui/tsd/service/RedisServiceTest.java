@@ -14,7 +14,7 @@ class RedisServiceTest {
 
 	@Test
 	void testAdd() {
-		rs.add();
+//		rs.add();
 	}
 	
 	
