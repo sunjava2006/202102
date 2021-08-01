@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.net.SocketAddress"/>
-<fullyQualifiedTypeName name="java.net.InetAddress"/>
-<fullyQualifiedTypeName name="java.net.InetSocketAddress"/>
-<fullyQualifiedTypeName name="java.net.ServerSocket"/>
-<fullyQualifiedTypeName name="java.io.OutputStream"/>
-<fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="oracle.jdbc.OracleDriver"/>
@@ -50,14 +41,23 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Results"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Result"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.One"/>
-<fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.wangrui.tsd.bean.Dynamic"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Many"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.UpdateProvider"/>
 <fullyQualifiedTypeName name="com.wangrui.tsd.dao.Provider"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.jdbc.SQL"/>
 <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.streaming.SourceReaderFactory"/>
+<fullyQualifiedTypeName name="javax.annotation.Resource"/>
+<fullyQualifiedTypeName name="javax.annotation.Resources"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="com.wangrui.mybatislearning.dao.UserDao"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.cache.decorators.LruCache"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Options"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.CacheNamespace"/>
+<fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.wangrui.tsd.bean.User"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

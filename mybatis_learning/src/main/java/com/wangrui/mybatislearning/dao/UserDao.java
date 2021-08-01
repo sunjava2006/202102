@@ -35,12 +35,13 @@ public interface UserDao {
 			                           })
 	public User findByPhoneNumber(String phoneNumber);
 	
-	@Options(flushCache =FlushCachePolicy.TRUE)
+	
 	@Insert("insert into t_user(user_id, phone_number, user_name) values (#{userID}, #{phoneNumber}, #{userName})")
 	@SelectKey(before = true, keyColumn = "user_id", resultType = Integer.class, keyProperty = "userID",
 	           statement = { "select seq_user.nextval from dual" })
 	public void add(User user);
 	
+	@Options(flushCache =FlushCachePolicy.FALSE) // FALSE不清除缓存
 	@Update("update t_user set user_name=#{userName, jdbcType=VARCHAR},"
 			+ " avatarUrl=#{avatarUrl ,jdbcType=VARCHAR} where user_id=#{userID}")
 	public void update(User user);
