@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="1238"/>
+		<item key="DIALOG_X_ORIGIN" value="824"/>
 		<item key="DIALOG_Y_ORIGIN" value="8"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
@@ -35,5 +35,7 @@
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="D:\_git_code_workspace\202102\spring\tsd"/>
 		</list>
+	</section>
+	<section name="EditorSelectionDialog">
 	</section>
 </section>
