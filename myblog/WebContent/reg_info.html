@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.required{color:red}
+td{border:#9CF dotted 1px; font-size:12px; height:30px; line-height:30px; vertical-align:middle}
+.align_right{text-align:right}
+</style>
+</head>
+
+<body>
+     <div style=" width:800px; margin:auto; margin-top:100px; box-shadow:#069 5px 5px 5px;">
+     当前位置：首页 > 个人注册
+     <hr/>
+     <form action="/regist" method="get">
+     <table style="width:100%; border:#03C solid 1px; border-collapse:collapse">
+         <tr>
+            <td colspan="2" style="background:url(img/bar_1px.jpg) repeat-x; height:35px; line-height:35px; font-size:14px; font-weight:bold">用户基本信息（<font class="required">*</font>为必填信息）
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>用户名
+            </td>
+            <td><div>以字母开头，字母与数字或者下划线的组合（3-20位）</div>
+              <input type="text"/>
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>密码
+           </td>
+            <td><div>字母与数字或者下划线的组合（6-12位）</div>
+                <input type="password"/>
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>确认密码
+            </td>
+            <td><input type="password"/>
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>电子邮件
+            </td>
+            <td><input type="text"/>
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>密码找回问题
+            </td>
+            <td><input type="text" />
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>密码找回答案
+            </td>
+            <td><input type="text"/>
+            </td>
+         </tr>
+         <tr>
+            <td class="align_right"><font class="required">*</font>验证码
+            </td>
+            <td><input type="text"/>
+            </td>
+         </tr>
+     </table>
+     </form>
+     <div style=" width:100%; text-align:center">
+         <button type="button" onclick="window.location='reg_protocal.html'">上一步</button>
+         <button type="button" onclick="document.forms[0].submit()">下一步</button>
+     
+     </div>
+     
+     </div>
+     
+</body>
+</html>

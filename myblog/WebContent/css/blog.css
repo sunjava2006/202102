@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+#page{ width:1191px; margin:auto; height:1044px; box-shadow:5px 5px 10px #666666; border:#999 solid 1px;}
+#head{ width:100%; height:176px; background:url(../img/banel.jpg) no-repeat; }
+#menu_bar{ width:100%; height:38px; background:url(../img/bar_1px.jpg) repeat-x; position:relative; top:138px;}
+#content{width:100%; height:768px; }
+#foot{ width:100%; height:100px; background-color:black; line-height:100px; vertical-align:middle; text-align:center;color:white; font-size:14px;}
+#left{ width:250px; height:100%; background-color:#69F; float:left;}
+#main{ width:939px; height:100%; border:0px; }
+#menu_bar_img{ height:100%; float:left; width:250px;}
+#logon{list-style:none; margin:0px; padding:0px}
+#logon li{ float:left; }
+#logon li label{ width:3px; color: white; line-height:35px; vertical-align:middle}
+#logon li a{display: block; width:80px; height:38px; line-height:35px; vertical-align:middle; text-align:center; color:white; text-decoration:none; font-size:14px}
+#select{ height:100%; line-height:35px; vertical-align:middle; float:left}
+#about_blog{height:100%;  float:right}
+#about_blog a{ margin-right:20px; line-height:35px; vertical-align:middle;  color:white; text-decoration:none; font-size:14px}
+.list{ width:100%; }
+.list label{ display:block; width:100%; height:30px; line-height:30px; vertical-align:middle; text-align:center; color:white; background:#039; font-size:14px;}
+.none_list{list-style:none}
+.decimal_list{list-style:decimal}
+a{cursor:pointer}
+a:hover{ transform:scale(1.2)}
