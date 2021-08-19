@@ -66,7 +66,7 @@
 		<item key="OmitCallToSuper" value="false"/>
 	</section>
 	<section name="DialogBounds_GenerateConstructorUsingFieldsSelectionDialog">
-		<item key="DIALOG_X_ORIGIN" value="1001"/>
+		<item key="DIALOG_X_ORIGIN" value="950"/>
 		<item key="DIALOG_Y_ORIGIN" value="209"/>
 		<item key="DIALOG_WIDTH" value="574"/>
 		<item key="DIALOG_HEIGHT" value="749"/>
@@ -77,14 +77,14 @@
 		<item key="RemoveFinal" value="false"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
-		<item key="DIALOG_X_ORIGIN" value="995"/>
+		<item key="DIALOG_X_ORIGIN" value="937"/>
 		<item key="DIALOG_Y_ORIGIN" value="197"/>
 		<item key="DIALOG_WIDTH" value="587"/>
 		<item key="DIALOG_HEIGHT" value="767"/>
 		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
 	</section>
 	<section name="DialogBounds_GenerateToStringDialog">
-		<item key="DIALOG_X_ORIGIN" value="1030"/>
+		<item key="DIALOG_X_ORIGIN" value="1008"/>
 		<item key="DIALOG_Y_ORIGIN" value="202"/>
 		<item key="DIALOG_WIDTH" value="516"/>
 		<item key="DIALOG_HEIGHT" value="759"/>
@@ -137,7 +137,7 @@
 		<item key="OmitCallToSuper" value="false"/>
 	</section>
 	<section name="DialogBounds_AddUnimplementedConstructorsDialog">
-		<item key="DIALOG_X_ORIGIN" value="1001"/>
+		<item key="DIALOG_X_ORIGIN" value="950"/>
 		<item key="DIALOG_Y_ORIGIN" value="246"/>
 		<item key="DIALOG_WIDTH" value="574"/>
 		<item key="DIALOG_HEIGHT" value="693"/>
@@ -156,5 +156,16 @@
 			<list key="selectedEnums">
 			</list>
 		</section>
+	</section>
+	<section name="ProblemSeveritiesConfigurationBlock">
+		<item key="expanded0" value="true"/>
+		<item key="expanded1" value="false"/>
+		<item key="expanded2" value="false"/>
+		<item key="expanded3" value="false"/>
+		<item key="expanded4" value="false"/>
+		<item key="expanded5" value="false"/>
+		<item key="expanded6" value="false"/>
+		<item key="expanded7" value="false"/>
+		<item key="expanded8" value="false"/>
 	</section>
 </section>

@@ -6,6 +6,19 @@ import java.sql.SQLException;
 import com.wangrui.myblog.bean.User;
 
 public class UserDao {
+	
+	public int selectLoginName(String loginName) throws SQLException {
+		int count = 0;
+		String sql = "select count(*) from t_user where login_name=?";
+		
+		JdbcTemplate tmp = new JdbcTemplate();
+		ResultSetExtrector<Integer> ext = (rst)->{
+			rst.next();
+			return rst.getInt(1);
+		};
+		count = tmp.select(sql,ext, loginName);
+		return count;
+	}
 
 	public User add(String loginName, String pwd, String email, String question, String answer) throws SQLException {
 		User u = null;
@@ -19,7 +32,8 @@ public class UserDao {
 					return rst.getInt(1);
 				}
 			};
-			int id = tmp.selectOne("select seq_user.nextval from dual", extrector);
+			
+			int id = tmp.select("select seq_user.nextval from dual", extrector);
 
 			int c = tmp.cud("insert into t_user(user_id, login_name, pwd, email, question, answer)values(?,?,?,?,?,?)", id, loginName, pwd, email, question, answer);
 

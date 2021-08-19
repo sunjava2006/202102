@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class JdbcTemplate {
 
-	public <T> T selectOne(String sql, ResultSetExtrector<T> ext,  Object...args) throws SQLException {
+	public <T> T select(String sql, ResultSetExtrector<T> ext,  Object...args) throws SQLException {
 		Connection conn = null;
 		PreparedStatement stm = null;
 		T t = null;

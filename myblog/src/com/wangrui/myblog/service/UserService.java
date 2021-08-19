@@ -14,10 +14,19 @@ public class UserService {
 		
 	}
 	
+	public boolean loginNameUnique(String loginName) throws SQLException {
+		UserDao dao = new UserDao();
+		int c = dao.selectLoginName(loginName);
+		if(0==c) {
+			return true;
+		}
+		return false;
+	}
+	
 	
 	public static void main(String[] args) throws SQLException {
 		UserService us = new UserService();
-		User u = us.regist("wang", "123456", "w@qq.com", "1+1", "3");
+		User u = us.regist("Tang", "123456", "w@qq.com", "1+1", "3");
 		System.out.println(u);
 	}
 }
