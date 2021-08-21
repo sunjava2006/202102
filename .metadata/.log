@@ -5413,3 +5413,18 @@ Caused by: java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-19 15:55:13.174
 !MESSAGE executing callback sts4.classpath.cZavCFVJ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-19 17:15:36.974
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cZavCFVJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-19 17:15:36.974
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.cZavCFVJ
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-19 17:15:36.974
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-19 17:15:36.984
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cZavCFVJ => OK
+
+!ENTRY org.eclipse.ui 2 2 2021-08-19 17:15:37.371
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
