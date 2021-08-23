@@ -18,5 +18,8 @@
 <!--        <servlet-name>regist</servlet-name> -->
 <!--        <url-pattern>/regist</url-pattern> -->
 <!--   </servlet-mapping> -->
-  
+   <session-config>
+        <session-timeout>1</session-timeout>
+   </session-config>
+
 </web-app>

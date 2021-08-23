@@ -9,6 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.wangrui.myblog.bean.User;
 import com.wangrui.myblog.service.UserService;
@@ -29,26 +32,43 @@ public class RegistServlet implements Servlet{
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		System.out.println(Thread.currentThread().getName()+"=======service=======");
 		
-		// 从request中获取参数
-		String loginName = req.getParameter("loginName");
-		String pwd = req.getParameter("pwd");
-		String email = req.getParameter("email");
-		String question = req.getParameter("question");
-		String answer = req.getParameter("answer");
+		HttpServletRequest request = (HttpServletRequest) req;
+		HttpSession session = request.getSession(true);
+		Object o = session.getAttribute("code");
+		if(o != null) {
+			String scode = (String) o;
+			String code = request.getParameter("code");
+			if(scode.equals(code)) {
+				// 从request中获取参数
+				String loginName = req.getParameter("loginName");
+				String pwd = req.getParameter("pwd");
+				String email = req.getParameter("email");
+				String question = req.getParameter("question");
+				String answer = req.getParameter("answer");
+				
+				UserService us = new UserService();
+				User u = null;
+				try {
+					u = us.regist(loginName, pwd, email, question, answer);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				if(u!=null) { // 注册成功，转向注册成功页面
+					req.getRequestDispatcher("/reg2email.html").forward(req, res);
+					
+				}else { // 回到登录页面，提示失败重试。
+					
+				}
+			}else {
+				request.setAttribute("msg", "验证码不正确");
+				request.getRequestDispatcher("/Login.jsp").forward(request, res);
+			}
+		}else {
+			HttpServletResponse response = (HttpServletResponse)res;
+			response.sendRedirect("/Login.jsp");
+		}
 		
-		UserService us = new UserService();
-		User u = null;
-		try {
-			u = us.regist(loginName, pwd, email, question, answer);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		if(u!=null) { // 注册成功，转向注册成功页面
-			req.getRequestDispatcher("/reg2email.html").forward(req, res);
-			
-		}else { // 回到登录页面，提示失败重试。
-			
-		}
+		
 		
 	}
 	
