@@ -16,7 +16,7 @@
 <!--        <url-pattern>/regist</url-pattern> -->
 <!--   </servlet-mapping> -->
    <session-config>
-        <session-timeout>1</session-timeout>
+        <session-timeout>120</session-timeout>
    </session-config>
 
 </web-app>

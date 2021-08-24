@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    import="com.wangrui.myblog.bean.User"
+    import="com.wangrui.myblog.bean.User,com.wangrui.myblog.bean.Blog"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -61,11 +61,29 @@
                     <input type="text" name="key"/>
                     <input type="button" value="检索"/>
                 </div>
+<%
+           if(userInfo!=null){
+        	   
+%>                
                 <div id="about_blog">
-                    <a href="#">我的博客/申请博客</a>
-                    <a href="index.html">首页</a>
+<%
+               Object blogInfo = session.getAttribute("blogInfo");
+               if(blogInfo!=null){
+            	   Blog b = (Blog)blogInfo;
+%>                
+                    <a href="/myBlog?blogID=<%=b.getBlogID() %>">我的博客</a>
+<%
+               }else{
+%>                    
+                    <a href="/Apply.jsp">申请博客</a>
                 </div>
+<%
+               }
+           }
+%>                
+                
             </div>
+        </div>
         </div>
         <!-- =============== end of  head ============================================================ -->
         

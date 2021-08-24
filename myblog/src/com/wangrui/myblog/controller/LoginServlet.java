@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.wangrui.myblog.bean.Blog;
 import com.wangrui.myblog.bean.User;
+import com.wangrui.myblog.service.BlogService;
 import com.wangrui.myblog.service.UserService;
 
 
@@ -32,9 +34,15 @@ public class LoginServlet extends HttpServlet {
 				String loginName = request.getParameter("loginName");
 				String pwd = request.getParameter("pwd");
 				User u = null;
-				
+				Blog b = null;
 				try {
 					u = us.login(loginName, pwd);
+					if(u!= null) {
+						// 再查询一下是否有博客
+						BlogService bs = new BlogService();
+						b = bs.findBlog(u.getUserID());
+						session.setAttribute("blogInfo", b);
+					}
 				} catch (SQLException e) {
 					e.printStackTrace();
 					request.setAttribute("msg", "登录失败");  // 共享这次请求中的数据
@@ -44,6 +52,8 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("msg", "登录名或密码不正确");  // 共享这次请求中的数据
 					request.getRequestDispatcher("/Logon.jsp").forward(request, response);
 				}else {//登录成功
+					
+					
 					session.setAttribute("userInfo", u);
 					response.sendRedirect("/");
 				}
