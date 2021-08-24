@@ -23,6 +23,11 @@ public class UserService {
 		return false;
 	}
 	
+	public User login(String loginName, String pwd) throws SQLException {
+		UserDao dao = new UserDao();
+		return dao.selectByLoginNamePwd(loginName, pwd);
+	}
+	
 	
 	public static void main(String[] args) throws SQLException {
 		UserService us = new UserService();

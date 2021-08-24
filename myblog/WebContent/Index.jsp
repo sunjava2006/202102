@@ -1,5 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    import="com.wangrui.myblog.bean.User"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
@@ -14,11 +17,36 @@
             <div id="menu_bar">
                 <div id="menu_bar_img">
                         <img src="img/dot.jpg"  style="margin:6px;float:left"/>
+                        
                         <ul id="logon">
+                        
+<%
+                 Object userInfo = session.getAttribute("userInfo");
+                 if(null == userInfo){
+%>                        
                             <li><a href="reg_protocal.html">注册</a></li>
                             <li><label>|</label></li>
                             <li><a href="/Logon.jsp">登录</a></li>
                             <li><label>|</label></li>
+                            
+<%
+                 }else{
+                	  User u = (User)userInfo;
+%>
+                            <li><a>你好
+                               <%=u.getLoginName() %>
+                               <% out.print(u.getLoginName()); %></a>
+                            </li>
+                            <li><label>|</label></li>
+                            <li><a href="/logout">退出</a></li>
+                            <li><label>|</label></li> 
+<%                	 
+                 }
+
+%>                            
+                            
+                            
+                            
                         </ul>
                 
                 
