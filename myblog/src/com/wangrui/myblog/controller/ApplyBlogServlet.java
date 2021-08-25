@@ -28,7 +28,7 @@ public class ApplyBlogServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
-		request.setCharacterEncoding("utf-8"); // 设置请求的字符编码
+//		request.setCharacterEncoding("utf-8"); // 设置请求的字符编码
 		
 		HttpSession session = request.getSession(true);
 		Object o = session.getAttribute("userInfo");

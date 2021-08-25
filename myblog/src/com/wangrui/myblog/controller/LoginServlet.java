@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +23,8 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
+		
+		
 		
 		Object o = session.getAttribute("code");
 		if(o != null) {
@@ -47,12 +50,24 @@ public class LoginServlet extends HttpServlet {
 					e.printStackTrace();
 					request.setAttribute("msg", "登录失败");  // 共享这次请求中的数据
 					request.getRequestDispatcher("/Logon.jsp").forward(request, response);
+					return;
 				} 
 				if(u==null) { // 登录不成功
 					request.setAttribute("msg", "登录名或密码不正确");  // 共享这次请求中的数据
 					request.getRequestDispatcher("/Logon.jsp").forward(request, response);
 				}else {//登录成功
-					
+					String auto = request.getParameter("autoLogon");
+					System.out.println(auto);
+					if(auto != null) {
+						Cookie c1 = new Cookie("loginName", loginName);
+						Cookie c2 = new Cookie("pwd", pwd);
+						c1.setMaxAge(24*60*60*10);
+						c2.setMaxAge(24*60*60*10);
+						
+						response.addCookie(c1);
+						response.addCookie(c2);
+						
+					}
 					
 					session.setAttribute("userInfo", u);
 					response.sendRedirect("/");

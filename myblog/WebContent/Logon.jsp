@@ -21,7 +21,7 @@ a,a:visited{color: white; text-decoration:none}
   <tr>
     <td width="77" rowspan="3"><img src="img/logon.jpg"/></td>
     <td width="59" height="27">用户名</td>
-    <td width="68"><input type="text" name="loginName"/></td>
+    <td width="68"><input type="text" name="loginName" /></td>
     <td width="78">&nbsp;</td>
   </tr>
   <tr>
@@ -47,6 +47,7 @@ a,a:visited{color: white; text-decoration:none}
     </label>
     <button type="button" onclick="location='/reg_protocal.html'">注册</button>
     <button type="button" onclick="document.forms[0].submit();">登录</button>
+    <input type="checkbox" name="autoLogon">10天免登录
     </td>
     </tr>
 </table>

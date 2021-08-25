@@ -15,7 +15,7 @@ public class BlogDao {
 			if(rst.next()) {
 				int blogID = rst.getInt("blog_id");
 				String blogName = rst.getString("blog_name");
-				String nickName = rst.getString("nickName");
+				String nickName = rst.getString("nick_name");
 				String photo = rst.getString("photo");
 				
 				bb = new Blog(blogID, blogName, nickName, userID, photo);

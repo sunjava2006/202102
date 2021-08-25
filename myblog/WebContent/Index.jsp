@@ -61,11 +61,12 @@
                     <input type="text" name="key"/>
                     <input type="button" value="检索"/>
                 </div>
+                 <div id="about_blog">
 <%
            if(userInfo!=null){
         	   
 %>                
-                <div id="about_blog">
+               
 <%
                Object blogInfo = session.getAttribute("blogInfo");
                if(blogInfo!=null){
@@ -76,15 +77,15 @@
                }else{
 %>                    
                     <a href="/Apply.jsp">申请博客</a>
-                </div>
+                
 <%
                }
            }
 %>                
-                
+              </div>  
             </div>
         </div>
-        </div>
+      
         <!-- =============== end of  head ============================================================ -->
         
         <div id="content">
