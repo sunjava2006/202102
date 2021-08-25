@@ -111,7 +111,10 @@
         </div>
         <!-- =============== end of  content ======================================================== -->
         <div id="foot">
-            copyright &copy; wang rui.wisezone ltd.
+            访问数：<%=application.getAttribute("accessCount") %>
+     当前用户数：${currentCount}      
+           
+当前在线会员：${loginUsers}
         </div>
         
     </div>

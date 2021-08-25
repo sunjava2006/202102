@@ -19,40 +19,40 @@ import com.wangrui.myblog.bean.User;
 import com.wangrui.myblog.service.BlogService;
 import com.wangrui.myblog.service.UserService;
 
-
 @WebFilter("/*")
 public class AutoLoginFilter implements Filter {
-	
+
 	public void init(FilterConfig fConfig) throws ServletException {
 		System.out.println("filter init");
 	}
-	
 
-	
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
-		
-		String loginName =null, pwd = null;
-		
+
+		String loginName = null, pwd = null;
+
 		Cookie[] cookies = req.getCookies();
-		for(Cookie c: cookies) {
-			String name = c.getName();
-			if("loginName".equals(name)) {
-				loginName = c.getValue();
-			}
-			if("pwd".equals(name)) {
-				pwd = c.getValue();
+		if (null != cookies) {
+			for (Cookie c : cookies) {
+				String name = c.getName();
+				if ("loginName".equals(name)) {
+					loginName = c.getValue();
+				}
+				if ("pwd".equals(name)) {
+					pwd = c.getValue();
+				}
 			}
 		}
-		
-		if(loginName != null && pwd != null) {
+
+		if (loginName != null && pwd != null) {
 			UserService us = new UserService();
 			try {
 				User u = us.login(loginName, pwd);
-				if(u!=null) {
+				if (u != null) {
 					HttpSession session = req.getSession(true);
 					session.setAttribute("userInfo", u);
-					
+
 					BlogService bs = new BlogService();
 					Blog b = bs.findBlog(u.getUserID());
 					session.setAttribute("blogInfo", b);
@@ -61,15 +61,13 @@ public class AutoLoginFilter implements Filter {
 				e.printStackTrace();
 			}
 		}
-		
-		
+
 		// 将请求放行，访问后续资源
 		chain.doFilter(request, response);
 	}
 
-	
 	public void destroy() {
-		
+
 	}
 
 }
