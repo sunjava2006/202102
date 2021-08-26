@@ -20,15 +20,7 @@ public class LogoutServlet extends HttpServlet {
 		session.removeAttribute("userInfo");
 		
 		session.removeAttribute("blogInfo");
-		
-		Cookie c1 = new Cookie("loginName", null);
-		Cookie c2 = new Cookie("pwd", null);
-		c1.setMaxAge(0);
-		c2.setMaxAge(0);
-		
-		response.addCookie(c1);
-		response.addCookie(c2);
-		
+
 		response.sendRedirect("/");
 	}
 

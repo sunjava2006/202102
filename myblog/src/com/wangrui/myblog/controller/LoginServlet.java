@@ -57,17 +57,6 @@ public class LoginServlet extends HttpServlet {
 					request.getRequestDispatcher("/Logon.jsp").forward(request, response);
 				}else {//µÇÂ¼³É¹¦
 					String auto = request.getParameter("autoLogon");
-					System.out.println(auto);
-					if(auto != null) {
-						Cookie c1 = new Cookie("loginName", loginName);
-						Cookie c2 = new Cookie("pwd", pwd);
-						c1.setMaxAge(24*60*60*10);
-						c2.setMaxAge(24*60*60*10);
-						
-						response.addCookie(c1);
-						response.addCookie(c2);
-						
-					}
 					
 					session.setAttribute("userInfo", u);
 					response.sendRedirect("/");

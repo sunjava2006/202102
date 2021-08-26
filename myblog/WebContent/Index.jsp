@@ -5,12 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>小点点专业技术博客首页</title>
 <link href="css/blog.css" rel="stylesheet"></link>
 </head>
 
 <body>
-
+<%
+System.out.println(application.getRealPath("/"));
+%>
 
     <div id="page">
         <div id="head">
