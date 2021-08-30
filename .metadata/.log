@@ -10685,3 +10685,15 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-30 10:00:30.537
 !MESSAGE executing callback sts4.classpath.gmwULpYD SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-30 14:28:32.428
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.gmwULpYD
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-30 14:28:32.429
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.gmwULpYD
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-30 14:28:32.429
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-08-30 14:28:32.430
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.gmwULpYD => OK
