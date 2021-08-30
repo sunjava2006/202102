@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    import="com.wangrui.myblog.bean.User,com.wangrui.myblog.bean.Blog"
+    
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,30 +24,22 @@ System.out.println(application.getRealPath("/"));
                         
                         <ul id="logon">
                         
-<%
-                 Object userInfo = session.getAttribute("userInfo");
-                 if(null == userInfo){
-%>                        
+<c:choose>   
+    <c:when test="${empty userInfo}">                   
                             <li><a href="reg_protocal.html">注册</a></li>
                             <li><label>|</label></li>
                             <li><a href="/Logon.jsp">登录</a></li>
                             <li><label>|</label></li>
-                            
-<%
-                 }else{
-                	  User u = (User)userInfo;
-%>
-                            <li><a>你好
-                               <%=u.getLoginName() %>
-                               <% out.print(u.getLoginName()); %></a>
+    </c:when>
+    <c:otherwise>
+                            <li><a>你好${userInfo.loginName}
+                               </a>
                             </li>
                             <li><label>|</label></li>
                             <li><a href="/logout">退出</a></li>
                             <li><label>|</label></li> 
-<%                	 
-                 }
-
-%>                            
+   </c:otherwise>
+</c:choose>                            
                             
                             
                             
@@ -65,26 +58,22 @@ System.out.println(application.getRealPath("/"));
                     <input type="button" value="检索"/>
                 </div>
                  <div id="about_blog">
-<%
-           if(userInfo!=null){
-        	   
-%>                
-               
-<%
-               Object blogInfo = session.getAttribute("blogInfo");
-               if(blogInfo!=null){
-            	   Blog b = (Blog)blogInfo;
-%>                
+                 
+ <c:if test="${! empty userInfo }">                
+
+      <c:choose>
+          <c:when test="${! empty blogInfo }">
+
+
                     <a href="/myBlog">我的博客</a>
-<%
-               }else{
-%>                    
+           </c:when>
+           <c:otherwise>
+                   
                     <a href="/Apply.jsp">申请博客</a>
-                
-<%
-               }
-           }
-%>                
+           </c:otherwise>
+     </c:choose>           
+</c:if>
+               
               </div>  
             </div>
         
@@ -114,7 +103,7 @@ System.out.println(application.getRealPath("/"));
         </div>
         <!-- =============== end of  content ======================================================== -->
         <div id="foot">
-            访问数：<%=application.getAttribute("accessCount") %>
+            访问数：${accessCount}
      当前用户数：${currentCount}      
            
 当前在线会员：${loginUsers}
