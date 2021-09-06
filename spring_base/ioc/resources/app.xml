@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="xiaoFang" class="com.wangrui.ioc.GirlFriend">
+        <!-- 构造注入，指定一个构造方法，在spring创建该对象时，通过构造方法为对象的属性赋值 -->
+        <constructor-arg index="0" value="小芳"></constructor-arg>
+    </bean>
+    
+    <bean name="xiaoHua" class="com.wangrui.ioc.GirlFriend">
+        <!-- 构造注入，指定一个构造方法，在spring创建该对象时，通过构造方法为对象的属性赋值 -->
+        <constructor-arg index="0" value="小花"></constructor-arg>
+    </bean>
+    
+    <bean name="boy" class="com.wangrui.ioc.Boy">
+     <!-- 构造注入，指定一个构造方法，在spring创建该对象时，通过构造方法为对象的属性赋值 -->
+     <!--  <constructor-arg index="0" ref="xiaoFang"></constructor-arg> -->
+     
+          <!-- 属性注入，指明为对象的哪一个属性赋值。spring会设备该属性的setXXX方法，为属性赋值 -->
+          <property name="gf">
+             <bean class="com.wangrui.ioc.GirlFriend">
+                 <property name="name" value="小红"></property>
+             </bean>
+          
+          </property>
+    </bean>
+    
+    <bean name="mother" class="com.wangrui.ioc.Mother"></bean>
+
+    <bean name="father" class="com.wangrui.ioc.methodInjection.Father">
+        <lookup-method name="see" bean="xiaoHua"/>
+        <replaced-method name="run" replacer="mother"></replaced-method>
+    </bean>
+
+</beans>

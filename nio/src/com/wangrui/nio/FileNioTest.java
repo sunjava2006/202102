@@ -1,8 +1,10 @@
 package com.wangrui.nio;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -22,11 +24,12 @@ public class FileNioTest {
 		FileChannel finChannel = null;
 		FileChannel foutChannel = null;
 		try {
-			fin = new FileInputStream("d:/没骨.mp4");
-			fout = new FileOutputStream("d:/2.mp4");
+//			fin = new FileInputStream("d:/没骨.mp4");
+//			fout = new FileOutputStream("d:/2.mp4");
 			
-			finChannel = fin.getChannel();
-			foutChannel = fout.getChannel();
+			
+			finChannel = FileChannel.open(Paths.get("d:/没骨.mp4"), StandardOpenOption.READ) ;//fin.getChannel();
+			foutChannel = FileChannel.open(Paths.get("d:/22.mp4"), StandardOpenOption.WRITE, StandardOpenOption.CREATE);//fout.getChannel();
 			
 			ByteBuffer buffer = ByteBuffer.allocate(1024);
 			System.out.println(buffer.isDirect());
@@ -122,13 +125,78 @@ public class FileNioTest {
 	}
 	
 	
-	
+	public static void scatterAndGather() throws IOException {
+		RandomAccessFile rafReader = null;
+		RandomAccessFile rafWriter = null;
+		FileChannel inChannel = null;
+		FileChannel outChannel = null;
+		try {
+			rafReader = new RandomAccessFile("d:/没骨.mp4", "r");
+			rafWriter = new RandomAccessFile("d:/5.mp4", "rw");
+			
+			inChannel = rafReader.getChannel();
+			outChannel = rafWriter.getChannel();
+			
+			double size = inChannel.size();
+			System.out.println(size);
+			
+			int arrayLength = 1024*1024*10;
+			
+			ByteBuffer[] buffers = new ByteBuffer[2];
+			for(int i=0; i<2; i++) {
+				ByteBuffer  b = ByteBuffer.allocate(arrayLength);
+				buffers[i] = b;
+				System.out.println(b.capacity()+"," +b.position()+","+b.limit());
+			}
+			System.out.println("-----------------------------------");
+
+
+			
+			// 分散读取
+			long count = -1;
+			while(-1 != (count = inChannel.read(buffers))) {
+				System.out.println("读出："+count);
+				for(ByteBuffer b : buffers) {
+					b.flip();
+					System.out.println(b.capacity()+"," +b.position()+","+b.limit());
+				}
+				
+				// 合并写入
+				long c = outChannel.write(buffers);
+				System.out.println("写入："+c);
+				for(ByteBuffer b : buffers) {
+					b.clear(); // 清除各buffer的状态。以便重新读入数据。
+					
+				}
+			}
+			
+			
+			
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if(outChannel != null) {
+				outChannel.close();
+			}
+			if(inChannel != null) {
+				inChannel.close();
+			}
+			if(rafWriter != null)
+				rafWriter.close();
+			if(rafReader != null)
+				rafReader.close();
+		}
+	}
 	
 	
 	public static void main(String[] args) throws IOException {
 		finoutChanel();
-		memoMapChannel();
-		channelTransfor();
+//		memoMapChannel();
+//		channelTransfor();
+		
+//		scatterAndGather();
 		
 	}
 }
