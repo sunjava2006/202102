@@ -7,8 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>resources/app.xml</config>
-		<config>resources/anapp.xml</config>
+		<config>sources/app.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

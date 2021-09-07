@@ -33,4 +33,23 @@
         <replaced-method name="run" replacer="mother"></replaced-method>
     </bean>
 
+    <!-- 实例工厂，先实体化一个工厂 -->
+    <bean name="carFactory" class="com.wangrui.ioc.factory.CarFactory"></bean>
+    <bean name="car" factory-bean="carFactory" factory-method="createCar"></bean>
+    <!-- 静态工厂 -->
+    <bean name="autoCar" class="com.wangrui.ioc.factory.AutoCarFactory" factory-method="createCar" 
+          scope="prototype"></bean><!-- 原型 -->
+     
+    <bean name="library" class="com.wangrui.ioc.propinjection.Library">
+         <property name="bookNames">
+           <list>
+               <value>java</value>
+           		<value>c</value>
+           		<value>c++</value>
+           </list>
+         </property>
+      
+    </bean> 
+    <bean name="print" class="com.wangrui.ioc.anno.PrintService" 
+          init-method="init" destroy-method="shutdown"></bean>
 </beans>
