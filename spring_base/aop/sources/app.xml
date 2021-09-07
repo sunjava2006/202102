@@ -7,5 +7,19 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
+<!-- <context:component-scan base-package="com.wangrui.aop"></context:component-scan> -->
+
+<!-- <aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
+
+<bean id="log" class="com.wangrui.aop.dynamicproxy.Log"></bean>
+<bean id="print" class="com.wangrui.aop.dynamicproxy.PrintService"></bean>
+
+<aop:config proxy-target-class="true">
+   <aop:aspect ref="log">
+       <aop:pointcut expression="execution(* com.wangrui.aop.dynamicproxy.PrintService.service(..))" id="atService"/>
+       <aop:before method="log" pointcut-ref="atService"/>
+   
+   </aop:aspect>
+</aop:config>
 
 </beans>
